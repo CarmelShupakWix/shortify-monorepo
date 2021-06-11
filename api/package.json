@@ -4,13 +4,20 @@
     "description": "Tiny url monorepo api gateway",
     "main": "server.js",
     "scripts": {
-        "start": "node ./dist/server.js",
-        "watch": "nodemon ./dist/server.js"
+        "build": "tsc",
+        "start": "tsc && node ./dist/server.js",
+        "watch": "tsc && nodemon ./dist/server.js"
     },
-    "author": "",
+    "author": "CarmelShupakWix",
     "dependencies": {
+        "@types/mysql": "^2.15.18",
         "body-parser": "^1.19.0",
         "express": "^4.16.2",
-        "mysql": "^2.18.1"
+        "mysql": "^2.18.1",
+        "typescript": "^4.0.2"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.9",
+        "@types/node": "^9.4.0"
     }
 }
