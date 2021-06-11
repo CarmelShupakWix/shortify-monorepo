@@ -7,11 +7,11 @@ export default class Database {
 	connection: mysql.Connection;
 
 	constructor() {
-		const connection = mysql.createConnection({
-			host: 'localhost',
-			user: 'root',
-			password: 'secret',
-			database: 'shortify-monorepo'
+		const connection = mysql.createConnection({ // Pay attention to these lines,  
+			host: 'localhost', // these are the configurations
+			user: 'root', // to our connection to the database 
+			password: 'secret', // which we have also defined in
+			database: 'shortify-monorepo' // docker-compose.yml
 		});
 
 		connection.connect();

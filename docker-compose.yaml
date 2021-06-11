@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  db:
+    image: mysql
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    ports: 
+      - 3306:3306
+    environment:
+        MYSQL_DATABASE: shortify-monorepo
+        MYSQL_ROOT_PASSWORD: secret
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./scripts/sql:/docker-entrypoint-initdb.d
+
+volumes:
+    dbdata:
